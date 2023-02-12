@@ -1,8 +1,6 @@
 import java.util.Random;
 import java.util.Scanner;
 
-import javax.print.event.PrintEvent;
-
 public class Lee_algorithm{
 
     private static Scanner scan = new Scanner(System.in);
@@ -67,6 +65,21 @@ public class Lee_algorithm{
     }
 
     public static void main(String[] args) {
-        Lee_algorithm.show_map();
+        String foo = "";
+        while(true)
+        {
+            Lee_algorithm.show_map();
+            Lee_algorithm.get_start_stop_coordinates();
+            Lee_algorithm.initialization();
+            Lee_algorithm.wave_progression();
+            Lee_algorithm.show_map();
+            Lee_algorithm.way_restoration();
+
+            System.out.println("Do you want to terminate the program y/Y ?");
+            foo = scan.next();
+            if(foo.equals("y") || foo.equals("Y"))
+                break;
+        }
+        scan.close();
     }
 }

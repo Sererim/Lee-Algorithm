@@ -1,6 +1,4 @@
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -118,6 +116,7 @@ public class Lee_algorithm{
                 map[i][j + 1] = 1;
         }
         nums[0] = 1;
+        map[start[0]][start[1]] = 0;
     }
 
     private static void wave_progression()
@@ -143,6 +142,7 @@ public class Lee_algorithm{
                 nums[1] = nums[0];
                 nums[0]++;
         } while (map[stop[0]][stop[1]] == 0);
+        map[start[0]][start[1]] = 0;
     }
 
     public static void main(String[] args) {
@@ -155,6 +155,7 @@ public class Lee_algorithm{
             System.out.printf("Stopping point coordinates [%d, %d]\n", stop[0], stop[1]);
             Lee_algorithm.initialization();
             Lee_algorithm.show_map();
+            System.out.println();
             Lee_algorithm.wave_progression();
             Lee_algorithm.show_map();
 

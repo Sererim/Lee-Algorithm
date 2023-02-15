@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -78,7 +79,7 @@ public class Lee_algorithm{
                     if(stop[1] < 0 || stop[1] >= 11)
                         throw new IllegalArgumentException();
                     
-                    if(start.equals(stop))
+                    if(!Arrays.equals(start, stop))
                         break;
                     else
                         throw new IllegalArgumentException();
